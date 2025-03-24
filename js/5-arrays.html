@@ -1,0 +1,147 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Arrays</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Loops - Arrays</h1>
+    <main>
+        <section id="output"></section>
+
+        <script>
+            
+            let texto = " ";
+        
+            /*ARRAYS - usados para guardar dados*/
+
+            let formandos = [];
+            /* let formandas = new Array();  Evitar por questões de performance (usar [])*/
+
+            let formandas = ["Mariana", "Marina", "Inês"];
+            /* let example = ["Inês", 123, true, [1,2,3]]; NOTA: Em JS podemos fazer arrays com diferentes tipos de dados*/
+
+             formandos[0] = "António";
+             formandos[1] = "Nuno";
+             formandos[2] = "Tiago";
+
+             console.log('formandos - dimensao', formandos.length);
+             /* console.log(formandos[2]); */
+
+             console.log(formandos[formandos.length - 1])
+
+             /*NOTA: Em JS, não é preciso definir um número (ex: podemos ter array[5] e ter só 1 elemento e o array ainda funciona.*/
+
+             formandos.push('Renan'); /*Acrescentar elemento no fim da array*/
+             console.log(formandos);
+             
+             formandos.unshift('Mário'); /*Acrescentar elemento no início da array*/
+             console.log(formandos);
+
+             formandos.pop(); /*Remover elemento no fim da array*/
+             console.log(formandos);
+
+             formandos.shift(); /*Remover elemento no início da array*/
+             console.log(formandos);
+
+             /*NOTA: Para eliminar um elemento no meio da array, temos que partir a array em 2, remover / adicionar um elemento no início ou no fim e juntar as duas arrays de novo.*/
+
+             let turma = formandos.concat(formandas); //Concatenar uma ou mais arrays com uma ou mais arrays 
+             console.log(turma);
+
+             console.log(formandos);
+             console.log(formandas);
+
+             /*NOTA: O concat NÃO altera a array formandos / formandas; só junta as duas num outro sítio
+             
+             NOTA 2: Devem-se evitar usar métodos que alterem a array.*/
+
+             turma.sort(); /*Orderna os elementos de forma alfabética*/
+             console.log(turma);
+
+             turma.reverse() /*Orderna os elementos de forma alfabética (mas de forma invertida: Z - A)*/
+             console.log(turma);
+
+             /*Copy by Value*/
+
+             let num1 = 1;
+             let num2 = num1; /*Copy by Value - cria um novo apontador para a mesmo valor*/
+
+             texto += `<br>Num1: ${num1}`;
+             texto += `<br>Num2: ${num2}`;
+             
+             num2 = 5;
+             texto += `<br>Num1: ${num1}`;
+             texto += `<br>Num2: ${num2}`;
+
+             texto += `<hr>`;
+
+             let nums = [1,2,3,4,]; //Trailing Comma - Não afeta a array, nem aparece no ecrã (mas pode dar muito jeito), introduzido no ES8
+
+             texto += `<br>Nums: ${nums}`;
+
+             let outrosNums = nums; // Copy by Reference - cria um novo apontador para a mesma referência - é como um "aliás.."
+             texto += `<br>Outros Nums: ${outrosNums}`;
+
+             outrosNums.push(5);
+             texto += `<br>Outros Nums: ${outrosNums}`;
+             texto += `<br>Nums: ${nums}`;
+
+
+             nums.pop();
+             texto += `<br>Outros Nums: ${outrosNums}`;
+             texto += `<br>Nums: ${nums}`;
+
+
+             /*Clonar arrays*/
+             let novaArray = [];
+             let cloneNums = novaArray.concat(nums);
+             texto = `<hr>`;
+             texto += `<br>Clone Nums: ${cloneNums}`;
+
+             nums.push(100);
+             texto += `<br>Nums: ${nums}`;
+             texto += `<br>Outros Nums: ${outrosNums}`;
+
+             //Spread operator (...), introduzido em ES6
+
+             let outroClone = [...nums]; //Sem os ... criamos uma array dentro de uma array; ao meter os ..., criamos uma array perfeitamente normal que coloca tudo o que está dentro do num e adiciona o que vai ser colocado dentro do outroClone.
+             console.log(outroClone);
+             nums.push(500);
+             console.log(outroClone);
+             console.log(nums);
+
+             let arrayMaravilha = ['Joao', 12345, true, ...formandos, 'Olá Mundo', ...formandas, nums];
+
+             console.log(arrayMaravilha)
+             
+             //Iterar Arrays
+
+             texto += `<hr></hr>`;
+
+             for (let index = 0; index < turma.length; index++) {
+                texto += `
+                <h3>Aluno: ${index + 1} : ${turma[index]}</h3>`
+                
+             }
+
+             texto += `<hr>------ Usar o forof -----------<br>`
+
+             //for of -introduzido em ES6 - itera os elementos do array sem se preocupar com o índice
+
+             for (let aluno of turma) {
+                texto += `
+                <h3>Aluno: ${aluno} </h3>
+                `
+                
+             }
+
+            
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>
