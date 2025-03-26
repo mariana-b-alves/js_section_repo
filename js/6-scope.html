@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Scope</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Scope de Variáveis</h1>
+    <main>
+        <section id="output"></section>
+
+        <script>
+            
+            let texto = " ";
+
+            let a = 3;
+        
+            //Scope -> "Onde é que a variável existe (se só dentro de chavetas ou dentro e for a de chavetas)"
+           console.log('a:', a);
+
+           //Var -> tende a ser global (i.e, "lê" tudo dentro e fora do bloco)
+           if(true){
+            /* let a = 10; */
+            console.log ('a dentro do if:', a);
+
+            /* var b = 5; */ //Variável global ao bloco (i.e., funciona dentro e fora de chavetas)
+            let b = 5; //Variável local ao bloco (i.e., só funciona dentro de chavetas)
+            console.log ('b dentro do if:', b);
+
+           }
+
+           /* console.log ('b fora do if:', b); */
+
+           /* {
+           let nome = "João" 
+           }
+
+           console.log(nome),
+           */
+
+           //NOTA: Esquecer o var, porque vai dar algumas dores de cabeça; não deixa re-declarar uma variável com o mesmo nome e, ao afetar globalmente o código, dá asneirada em termos de variáveis
+
+           /* var num = 10;
+           num = 3;
+           console.log('num', num);
+
+           let num = "João"
+           console.log('num', num); */
+
+           const pi = 3.14
+
+           console.log('pi:', pi);
+
+           const arr = [1, 2, 3];
+           console.log('arr:', arr);
+           arr.push(4);
+           console.log('arr:', arr);
+
+           //Aqui o const dá erro porque começamos a variável do zero e assim criamos outra referência a apontar para o mesmo sítio (deixa de ser "constante")
+
+           arr = [];
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>

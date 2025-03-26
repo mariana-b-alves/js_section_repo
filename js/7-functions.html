@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Funções</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Funções</h1>
+    <main>
+        <section id="output"></section>
+
+        <script>
+            
+            let texto = " ";
+            
+            //Função "simples"
+            //NOTA = Todas as funções, sem falta, têm parênteses (parâmetros)
+            function dizOla() {
+                texto += `<hr>`;
+                texto += `<p>Olá João</p>`;
+                texto += `<p>Bem-vindos ao Javascript</p>`;
+                texto += `<hr>`;
+            }
+
+            //O código não corre até este ponto porque não foi invocada
+
+            dizOla();
+            dizOla();
+            dizOla();
+            dizOla();
+
+
+            //Agora sim, foi invocada
+
+            //Se se invocámo-la um x número de vezes, ela vai aparecer no ecrã as taiss x vezes
+
+
+            //Funções com parâmetros - passar a mesma função, mas invocando "elementos" que diferem para que não se tenha que repetir sempre a mesma função para contextos ligeiramwnte diferentes
+
+            function dizOlaNome(nome = 'John', apelido = 'Doe'){
+                texto += `<hr>`;
+                texto += `<p>Olá ${nome} ${apelido}</p>`;
+                texto += `<p>Bem-vindos ao Javascript</p>`;
+                texto += `<hr>`;
+            }
+
+            /* dizOlaNome('Maria', 'Silva');
+            dizOlaNome('Manuel');
+            dizOlaNome('Joaquim');
+            dizOlaNome(); */
+
+            //Funções que "retornam valores" (tecnicamente todos fazem) -> funções mais comuns
+
+            //A única instância em que o var leria variáveis locais seria dentro de funções
+
+            function calcularArea(altura = 1, comprimento = 1){
+                let area = altura * comprimento;
+                return area;
+            }
+            
+            console.log(calcularArea(5, 9));
+            console.log(calcularArea(8, 3));
+
+            let altura = Number(prompt('Qual a altura?'));
+            let comprimento = Number(prompt('Qual a comprimento?'));
+
+            texto += `<h1>Retângulo de ${altura} de altura e de ${comprimento} de comprimento, tem uma área de ${calcularArea(altura, comprimento)}.</h1>`
+            
+
+            //Propriedades -> Variáveis
+            //Métodos -> Funcionalidades de e portant0 têm ()
+
+           
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>
