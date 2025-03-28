@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Funções</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Funções</h1>
+    <main>
+        <script src="library.js"></script>
+        <section id="output"></section>
+
+        <script>
+            
+            let texto = " ";
+
+            dizOla(); //Hoisting -> Elevar (poder invocar uma função antes de ser declarada; vai correr o código primeiro e SÓ DEPOIS corre o resto da function declaration)
+            //Pergunta de emprego
+            
+            //Function declaration
+            function dizOla() {
+                texto += `<hr>`;
+                texto += `<p>Olá João</p>`;
+                texto += `<p>Bem-vindos ao Javascript</p>`;
+                texto += `<hr>`;
+            }
+
+            /* function(){ //Função anónima (Anonymous function)
+                //qualquer coisa
+            } */
+
+            //Function Expression
+            let dizOla2 = function() {
+                //Grande diferença aqui:Com o let, não é possível fazer hoisting
+                texto += `<hr>`;
+                texto += `<p>Olá João</p>`;
+                texto += `<p>Bem-vindos ao Javascript</p>`;
+                texto += `<hr>`;
+            }
+            dizOla2(); 
+
+            //Arrow Functions - ES6 - Function Expression
+
+            //É uma function declaration, portanto DÁ para fazer hoisting
+
+            /* function calcularCircunferencia(raio = 1){
+                let perimetro = 2 * Math.PI * raio;
+                return perimetro;
+            }
+            console.log(calcularCircunferencia(5));
+ */
+            //A seta (=>) veio substituir o return e simplificar o código
+
+            //NOTA: É só necessário colocar parênteses nos params se tivermos mais que um
+            let calcularCircunferencia = raio => 2 * Math.PI * raio;
+            console.log(calcularCircunferencia(5));
+            
+            //Se tivermos mais que uma instrução, teremos que utilizar chavetas
+            let calcularCircunferencia2 = raio =>{
+                let perimetro = 2 * Math.PI * raio;
+                return perimetro;
+            }
+            
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>
