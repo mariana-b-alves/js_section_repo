@@ -34,8 +34,20 @@
                 }
             }
 
+            const outroHotel = {
+                name: 'Evolution',
+                rooms: 100,
+                booked: 55,
+                pool: false,
+                typeOfRooms: ['suite', 'single', 'twins'],
+                check: function(){ 
+                    return this.rooms - this.booked; 
+                }
+            }
+
             console.log(hotel.name);
             console.log(hotel.check());
+
             
 
             //NOTA: Propriedades têm parênteses, métodos não
