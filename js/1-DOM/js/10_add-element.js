@@ -1,6 +1,6 @@
 let lista = document.querySelector('ul');
 
-//Acrescentar um li no final da lista~
+//Acrescentar um li no final da lista
 
 //1 - Criar o li
 let itemFim = document.createElement('li');

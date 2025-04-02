@@ -2,11 +2,11 @@
 
 //NOTA 2: SASS =/= CSS
 
-let itemsHot = document.querySelector('ul li.hot');
+/* let itemsHot = document.querySelector('ul li.hot');
 console.log(itemsHot);
 
 itemsHot[1].className = 'cool';
-
+ */
 
 //Selecionar
 
