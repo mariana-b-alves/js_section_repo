@@ -10,15 +10,20 @@
     <div id="page">
         <h1>List King</h1>
         <h2>New Account</h2>
-        <form method="post" action="http://www.example.org/register">
+        <form method="post" action="http://www.example.org/register" autocomplete="off">
 
             <label for="username">Create a username: </label>
             <input type="text" id="username" />
             <div id="feedback"></div>
 
+            <label for="apelido">Create a username: </label>
+            <input type="text" id="apelido" />
+            <div id="feedback"></div>
+
             <label for="password">Create a password: </label>
             <input type="password" id="password" />
             <div id="feedback"></div>
+            <!--Quando temos três blocos com 3 ids iguais, só lerá o último-->
 
             <input type="submit" value="sign up" />
 

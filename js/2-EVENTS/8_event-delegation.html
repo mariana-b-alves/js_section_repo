@@ -4,6 +4,12 @@
 <head>
     <title>JavaScript - Event Delegation</title>
     <link rel="stylesheet" href="css/c06.css" />
+
+    <style>
+        a > * {
+            pointer-events: none; /*Corta a fase de captura até a um determinado nível*/
+        }
+    </style>
 </head>
 
 <body>
