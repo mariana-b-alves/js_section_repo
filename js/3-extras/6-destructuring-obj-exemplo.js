@@ -4,16 +4,14 @@ let container = document.querySelector('#container');
 container.addEventListener('click', dizerOla, false);
 
 
-//function dizerOla(e){
-//function dizerOla(e){
-function dizerOla({target: {value}}){
+/* function dizerOla(e){ */
+function dizerOla({target: {value}, currentTarget}, altKey){
+    //console.log(e)
+    //let (target: {value}, currentTarget = e)
 
-    //let {target: {value}} = e;
+    let {target: {value}, currentTarget} = e;
 
-    //let texto = e.target.value;
-    //let texto = target.value;
-    //let texto = value;
-    //output.textContent = texto;
-    output.textContent = value;
-
+    console.log('Target value: ', value);
+    console.log('Current target: ', currentTarget);
+    console.log('Alt ligado', altKey);
 }
