@@ -9,30 +9,30 @@ let obj = {
 
 console.log('Cidade: ', obj.address.city);
 console.log('Cidade: ', obj.address.street);
-console.log('Cidade: ', obj.name);
+console.log('Cidade: ', obj.nome);
 
-//Destructuring
-/* let {name, lastName} = obj;
-let {name: name, lastName: lastName} = obj; 
-let {name: name, lastName: apelido} = obj; 
-let {name: name, lastName: apelido, address} = obj; */
-
-let {name, lastName: apelido, address: {city, street}} = obj;
+/* let {name} = obj;
 let nomePessoa = obj.name;
 
-/* console.log(nomePessoa);
-console.log(nome); */
+console.log(nomePessoa);
+console.log(name); */
+
+// destructuring
+//let {name, lastName} = obj;
+//let {name: name, lastName: lastName} = obj;
+//let {name, lastName: apelido} = obj;
+//let {name, lastName: apelido, address} = obj;
+let {name, lastName: apelido, address: {city, street}} = obj;
 
 console.log('Nome: ', name);
-/* console.log('Last Name: ', lastName); */
+//console.log('Apelido: ', lastName);
 console.log('Apelido: ', apelido);
-/* console.log('Address: ', address);
- */
-/* console.log('City: ', address.city);
- */console.log('City: ', city)
+//console.log('Addres: ', address);
 
+//console.log('city: ', address.city);
+console.log('city: ', city);
 
-let obj2 = {
+/* let obj2 = {
     "id": 3,
     "name": "Clementine Bauch",
     "username": "Samantha",
@@ -67,4 +67,4 @@ console.log(city);
 
 
 let {username, address:{geo:{lat,lng}}} = obj2;
-console.log(lat);
+console.log(lat); */
