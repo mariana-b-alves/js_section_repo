@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Intro</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>JS - Feature Detection </h1>
+    <main>
+        <section id="output"></section>
+
+        <script>
+            console.log(navigator);
+
+            if('geolocation' in navigator){
+                console.log('Tenho acesso à geolocalização');
+            } else{
+                console.log('Não tenho acesso à geolocalização');
+            }
+
+            if('batterapi' in navigator){
+                console.log('Tenho acesso à bateria');
+            } else{
+                console.log('Não tenho acesso à bateria');
+            }
+           
+            // escrever dentro da section output
+            let output = document.getElementById('output');
+            output.innerHTML = "Hello World!"
+        </script>
+    </main>
+</body>
+</html>
